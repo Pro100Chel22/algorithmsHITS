@@ -47,14 +47,14 @@ class ForEntropy {
 
 const posstr = "THAP ";
 const negstr = "CAO ";
-var List = document.getElementById('root');
-var attr = [];
-var tree;
+let List = document.getElementById('root');
+let attr = [];
+let tree;
 
 document.getElementById("BuildTree").addEventListener("click", function () {
     ClearTree();
-    var Branch = getRoot();
-    var ul = document.getElementById("root");
+    let Branch = getRoot();
+    let ul = document.getElementById("root");
     getBranch(Branch);
     drawTree(tree.root, ul);
 })
@@ -65,20 +65,20 @@ function getUniqueValues(index, dataset) {
 }
 
 function countUniqueValues(group, Branch) {
-    var dataset = [];
+    let dataset = [];
     dataset = CreateAndCopyDataset(dataset, Branch.data);
 
-    var temp = [];
+    let temp = [];
     temp = getUniqueValues(group, dataset);
 
-    for (var k = 0; k < temp.length; k++) {
+    for (let k = 0; k < temp.length; k++) {
         attr[k] = new ForEntropy(0, 0, temp[k], 0, 0);
     }
 
-    for (var k = 1; k < temp.length; k++) {
+    for (let k = 1; k < temp.length; k++) {
         let pos = 1;
         let neg = 1;
-        for (var i = 0; i < dataset.length; i++) {
+        for (let i = 0; i < dataset.length; i++) {
             if (dataset[i][group] === attr[k].value) {
                 if (dataset[i][dataset[0].length - 1] === posstr) {
                     attr[k].positive = pos++;
@@ -105,11 +105,11 @@ function countUniqueValues(group, Branch) {
 
 function Entropy(group, Branch) {
     countUniqueValues(group, Branch);
-    var entropy = 0;
-    var pp, pn;
+    let entropy = 0;
+    let pp, pn;
     let positive;
     let negative;
-    for (var i = 0; i < attr.length; i++) {
+    for (let i = 0; i < attr.length; i++) {
         pp = attr[i].positive / attr[i].res;
         positive = -pp * getLog(2, pp);
 
@@ -129,13 +129,13 @@ function getLog(x, y) {
 }
 
 function Gain(Branch) {
-    var gains = [];
-    var data = [];
-    data = CreateAndCopyDataset(data, Branch.data)
-    for (var i = 0; i < Branch.data[0].length - 1; i++) {
+    let gains = [];
+    let data = [];
+    data = CreateAndCopyDataset(data, Branch.data);
+    for (let i = 0; i < Branch.data[0].length - 1; i++) {
         Entropy(i, Branch);
-        var summentr = 0;
-        for (var k = 1; k < attr.length; k++) {
+        let summentr = 0;
+        for (let k = 1; k < attr.length; k++) {
             if (!Number.isNaN(attr[k].entropy)) {
                 summentr = summentr + attr[k].entropy;
             }
@@ -146,11 +146,11 @@ function Gain(Branch) {
 }
 
 function getMaxGain(Branch) {
-    var gains = [];
+    let gains = [];
     gains = Gain(Branch);
-    var maxgain = -1;
-    for (var i = 0; i < gains.length; i++) {
-        var maxgainattr;
+    let maxgain = -1;
+    let maxgainattr = -1;
+    for (let i = 0; i < gains.length; i++) {
         if (gains[i] > maxgain) {
             maxgainattr = i;
             maxgain = gains[i];
@@ -160,9 +160,9 @@ function getMaxGain(Branch) {
 }
 
 function CreateAndCopyDataset(data, dataset) {
-    for (var i = 0; i < dataset.length; i++) {
+    for (let i = 0; i < dataset.length; i++) {
         data[i] = new Array;
-        for (var j = 0; j < dataset[0].length; j++) {
+        for (let j = 0; j < dataset[0].length; j++) {
             data[i][j] = dataset[i][j];
         }
     }
@@ -170,18 +170,18 @@ function CreateAndCopyDataset(data, dataset) {
 }
 
 function changeData(attribut, group, dataset) {
-    var data = [];
-    var count = 0;
-    for (var i = 0; i < dataset.length; i++) {
+    let data = [];
+    let count = 0;
+    for (let i = 0; i < dataset.length; i++) {
         data[count] = new Array();
         if (dataset[i][group] === attribut) {
-            for (var c = 0; c < dataset[0].length; c++) {
+            for (let c = 0; c < dataset[0].length; c++) {
                 data[count][c] = dataset[i][c];
             }
             count++;
         }
         else if (i === 0) {
-            for (var c = 0; c < dataset[0].length; c++) {
+            for (let c = 0; c < dataset[0].length; c++) {
                 data[count][c] = dataset[i][c];
             }
             count++;
@@ -191,17 +191,17 @@ function changeData(attribut, group, dataset) {
 }
 
 function getRoot() {
-    var Branch = new Node('root', Dataset);
+    let Branch = new Node('root', Dataset);
     tree = new Tree(Branch);
     return Branch;
 }
 
 function isLeaf(Branch) {
-    var data = [];
-    var county = 0;
-    var countn = 0;
+    let data = [];
+    let county = 0;
+    let countn = 0;
     data = CreateAndCopyDataset(data, Branch.data);
-    for (var i = 1; i < data.length; i++) {
+    for (let i = 1; i < data.length; i++) {
         if (data[i][data[0].length - 1] === posstr) {
             county++;
         }
@@ -230,15 +230,15 @@ function isLeaf(Branch) {
 }
 
 function getBranch(Branch) {
-    var attrIndex = getMaxGain(Branch);
-    var attrib = [];
+    let attrIndex = getMaxGain(Branch);
+    let attrib = [];
     attrib = getUniqueValues(attrIndex, Branch.data);
     console.log(Branch);
 
-    for (var i = 1; i < attrib.length; i++) {
-        var data = [];
+    for (let i = 1; i < attrib.length; i++) {
+        let data = [];
         data = changeData(attrib[i], attrIndex, Branch.data);
-        var buf = new Node(attrib[i], data, Branch, attrib[0]);
+        let buf = new Node(attrib[i], data, Branch, attrib[0]);
 
         Branch.child[Branch.child.length] = buf;
         getBranch(Branch.child[i - 1]);
@@ -270,7 +270,7 @@ function drawTree(node, treeEl) {
     let li = document.createElement("li");
     let a = document.createElement("a");
     a.href = "#";
-    var data = [];
+    let data = [];
     data = CreateAndCopyDataset(data, node.data);
 
     if (isLeaf(node)) {
