@@ -1,18 +1,18 @@
-var upload = document.getElementById("upload");
+let upload = document.getElementById("upload");
 const textInput = document.getElementById('textInput');
 
-var files = upload.files;
-var test = document.getElementById('textdata');
+let files = upload.files;
+let test = document.getElementById('textdata');
 
 document.getElementById("DetourButton").addEventListener("click", function() {
-    var data = [];
+    let data = [];
     data = parseCSVtoArray(test.value);
     DetourTree(tree.root, data);
 })
 
 
 function parseCSVtoMatrix(strCSV) {
-    var buff = parseCSV(strCSV);
+    let buff = parseCSV(strCSV);
     return transformToMatrix(buff);
 }
 
@@ -51,11 +51,11 @@ function parseCSVtoArray(strCSV) {
 }
 
 function transformToMatrix(array) {
-    var matrix = []
-    var count = 0;
-    for (var i = 0; i < (array.length - 1) / array[array.length - 1]; i++) {
+    let matrix = []
+    let count = 0;
+    for (let i = 0; i < (array.length - 1) / array[array.length - 1]; i++) {
         matrix[i] = []
-        for (var j = 0; j < array[array.length - 1]; j++) {
+        for (let j = 0; j < array[array.length - 1]; j++) {
             matrix[i][j] = array[count];
             count++;
         }
