@@ -33,7 +33,7 @@ export function addFields(){
     for(let i = 1; i <= ids.length; i++){
         label = document.createElement("label"); input = document.createElement("input");
         label.htmlFor = ids[i - 1]; label.innerText = ids[i - 1];
-        input.setAttribute("id", ids[i - 1]); input.setAttribute("type", "text");input.className = "ul fields";
+        input.setAttribute("id", ids[i - 1]); input.setAttribute("type", "number");input.className = "ul fields";
         document.getElementById("ulElem").append(label, input);
     }
 }
