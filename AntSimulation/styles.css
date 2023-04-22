@@ -1,0 +1,165 @@
+
+body {
+    background-image: url('images/backgroundBoards.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.myCanvas {
+    width: 70vw;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    width: 20vw;
+}
+
+.block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 20vw;
+    height: 8.25vw;
+}
+
+.button-style {
+    position: relative;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    height: 4.3vw;
+    font-size: 1.5vw;
+    font-weight: bold;
+    color: rgb(93, 64, 39);
+    border: 0.41vw solid rgb(93, 64, 39);
+}
+
+.button-style:enabled:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+}
+
+.button-style:enabled:active {
+    color: rgba(93, 64, 39, 0.6);
+}
+
+.button-style:disabled:hover {
+    color: rgba(93, 64, 39, 0.4);
+}
+
+.button-style:disabled:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/Lock_Icon.png');
+    background-repeat: no-repeat;
+    background-size: 2.5vw;
+    background-position: center center;
+}
+
+#addHome {
+    border-right: 0;
+}
+
+#addBarrier {
+    border-right: 0;
+}
+
+#delete {
+    border-right: 0;
+}
+
+.drop-menu {
+    width: 20vw;
+}
+
+.background-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/backgroundBoardsBlur.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+.dropdown-content {
+    width: 19.25vw;
+    display: none;
+    position: absolute;
+    backdrop-filter: blur(100000px);
+    border: 0.41vw solid rgb(93, 64, 39);
+    border-top: 0;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: rgb(93, 64, 39);
+    font-weight: bold;
+    width: 100%;
+    padding: 0.28vw 0.6vw;
+    font-size: 1.5vw;
+    display: block;
+}
+
+.dropdown-content a input {
+    color: rgb(35, 246, 10);
+    background: transparent;
+    width: 16.5vw;
+    height: 1vw;
+    font-size: 1.3vw;
+    display: block;
+}
+
+.dropdown-content a button {
+    background: transparent;
+    backdrop-filter: blur(10px);
+    width: 17.85vw;
+    height: 4vw;
+    font-size: 1.5vw;
+    font-weight: bold;
+    color: rgb(93, 64, 39);
+    border: 0.41vw solid rgb(93, 64, 39);
+}
+
+.dropdown-content a button:enabled:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.dropdown-content a button:enabled:active {
+    color: rgba(93, 64, 39, 0.6);
+}
+
+.show {display:block;}
+
+.block-checkbox {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.input-checkbox-style {
+    max-width:  1vw;
+    min-height: 1.4vw;
+    margin: 0.1vw;
+}
+
+.text-checkbox-style {
+    min-width:  15.6vw;
+    max-width:  16vw;
+    min-height: 2vw;
+}

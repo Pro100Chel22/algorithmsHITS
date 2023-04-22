@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="navbar.css">
+</head>
+<body>
+<div class="content">
+    <canvas id = "field" class="myCanvas"></canvas>
+    <div class = "buttons">
+        <div class="block">
+            <div class="drop-menu">
+                <button id = "settings" class="button-style">SETTINGS</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <div class="background-image"></div>
+                    <a>Seed of cave generation:</a>
+                    <a><input id = "inputSeed" type="number"></a>
+                    <a>Size of colony:</a>
+                    <a><input id = "inputSizeOfColony" type="number"></a>
+                    <a>Percentage of scouts:</a>
+                    <a><input id = "inputPercentageOfScouts" type="number"></a>
+                    <a>Nutritional value of food:</a>
+                    <a><input id = "inputNutritional" type="number"></a>
+                    <a>Amount of food:</a>
+                    <a><input id = "inputAmountOfFood" type="number"></a>
+                    <a><div class="block-checkbox"><div class = "text-checkbox-style">Infinity food:</div><input id = "inputInfinityFood" type = "checkbox" class = "input-checkbox-style"></div></a>
+                    <a><div class="block-checkbox"><div class = "text-checkbox-style">Mortal ants:</div><input id = "inputMortalAnts" type = "checkbox" class = "input-checkbox-style"></div></a>
+                    <a><div class="block-checkbox"><div class = "text-checkbox-style">Show pheromones:</div><input id = "inputShowPheromones" type= "checkbox" class = "input-checkbox-style"></div></a>
+                    <a><div class="block-checkbox"><div class = "text-checkbox-style">Show markers:</div><input id = "inputShowMarkers" type = "checkbox" class = "input-checkbox-style"></div></a>
+                    <a><div class="block-checkbox"><div class = "text-checkbox-style">Show ants:</div><input id = "inputShowAnts" type = "checkbox" class = "input-checkbox-style"></div></a>
+                    <a><div class="block-checkbox"><div class = "text-checkbox-style">Show graphic of ants:</div><input id = "inputShowGraphicOfAnts" type = "checkbox" class = "input-checkbox-style"></div></a>
+                    <a><button id = "apply">APPLY</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="block">
+            <button id = "addBarrier" class="button-style">BARRIER</button>
+            <button id = "generateMaze" class="button-style">MAZE</button>
+        </div>
+        <div class="block">
+            <button id = "delete" class="button-style">DELETE</button>
+            <button id = "clear" class="button-style">CLEAR</button>
+        </div>
+        <div class="block">
+            <button id = "addHome" class="button-style">HOME</button>
+            <button id = "addFood" class="button-style">FOOD</button>
+        </div>
+        <div class="block">
+            <button id = "start" class="button-style">START</button>
+        </div>
+        <div class="block">
+            <button id = "stop" class="button-style">STOP</button>
+        </div>
+    </div>
+</div>
+<script type="module" src="./main.js"></script>
+</body>
+</html>

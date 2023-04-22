@@ -1,0 +1,134 @@
+body{
+    background-image: url("images/board.jpg");
+    height: auto;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+.stylish {
+    color: rgba(74, 255, 128, 0.6);
+    background-color: transparent;
+    box-shadow: 12px 12px 5px 2px rgba(74, 255, 128, 0.15);
+}
+.new{
+    margin-top: 100px;
+    width: 100%;
+    margin-left: 45px;
+    text-align: center;
+    font-size: 30px;
+    font-family: "Consolas", "Comic Sans MS";
+}
+.new div{
+    margin-bottom: 20px;
+}
+.new span{
+    color: rgba(253, 235, 5, 0.8);
+}
+.canvas-class{
+    position: absolute;
+    display: flex;
+    background: grey;
+    width: 40%;
+    min-width: 300px;
+    transform: translate(70%);
+    margin-top: 50px;
+    box-shadow: 0 10px 50px 10px grey;
+}
+.canvas-class canvas{
+    width: 100%;
+    cursor: crosshair;
+}
+
+
+
+.inputArea{
+    position: relative;
+    width: 20%;
+    float: right;
+    margin-right: 80px;
+    margin-top: 20px;
+    min-width: 150px;
+}
+ul .fields{
+    margin: 20px;
+    width: 100%;
+    background: rgba(10, 22, 14, 1);
+    outline: 0;
+    color: rgba(50, 255, 73, 0.8);
+    font-family: "Consolas", "Comic Sans MS";
+    font-size: 20px;
+}
+label{
+    color: rgba(50, 255, 73, 0.8);
+    display: flex;
+    transform: translate(0, 100%);
+    font-size: 20px;
+    font-family: "Consolas", "Comic Sans MS";
+}
+
+
+
+
+.buttons{
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin-left: 55px;
+}
+.mainbutton{
+    background: rgba(10, 22, 14, 1);
+    color: rgba(50, 255, 73, 0.8);
+    width: 93%;
+    margin-top: 15px;
+    font-size: 2vh;
+    margin-left: 54px;
+    cursor: pointer;
+    font-family: "Consolas", "Comic Sans MS";
+}
+.buttons button{
+    background: rgba(10, 22, 14, 1);
+    color: rgba(50, 255, 73, 0.8);
+    width: 46.5%;
+    font-size: 2.1vh;
+    cursor: pointer;
+    font-family: "Consolas", "Comic Sans MS";
+}
+.inputArea canvas{
+    display: flex;
+    background: grey;
+    width: 92%;
+    min-width: 150px;
+    float: right;
+    margin-top: 15px;
+    margin-right: -31px;
+    cursor: pointer;
+    box-shadow: 0 0 10px 5px rgba(43, 218, 206, 1);
+}
+.speedControllers{
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin-left: 55px;
+    margin-top: 15px;
+}
+.speedControllers button{
+    background: rgba(10, 22, 14, 1);
+    color: rgba(50, 255, 73, 0.8);
+    width: 18.5%;
+    font-size: 2.1vh;
+    cursor: pointer;
+    font-family: "Consolas", "Comic Sans MS";
+}
+
+
+@media screen and (max-width: 1000px){
+    .inputArea{
+        float: left;
+    }
+    .inputArea canvas{
+        margin-right: -54.6px;
+    }
+    .buttons button{
+        width: 46%;
+    }
+}

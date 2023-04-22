@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="navbar.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="content">
+        <canvas id = "canvasCluster" class="myCanvas"></canvas>
+        <div class = "buttons">
+            <div class="block">
+                <div class="SizeSlider">
+                    <input class="tableSizeSlider" id ="sliderNumCenter" type="range" min="1" max="10" value="3" />
+                    <label class="tableSizeLabel" id ="lableNumCenter">Number of clusters: 3</label>
+                </div>
+            </div>
+            <div class="block">
+                <button id = "create" class="button-style"> Очистить </button>
+            </div>
+            <div class="block">
+                <button id = "setPoint" class="button-style"> Поставить вершину </button>
+            </div>
+            <div class="block">
+                <button id = "clear" class="button-style"> Очистить связи </button>
+            </div>
+            <div class="block">
+                <button id = "kMedium" class="button-style"> Алгоритм К-средних </button>
+            </div>
+            <div class="block">
+                <button id = "ostovClusterizations" class="button-style"> Алгоритм Остовной </button>
+            </div>
+            <div class="block">
+                <button id = "compareClusterizations" class="button-style"> Сравнить алгоритмы </button>
+            </div>
+        </div>
+    </div>
+    <script src = "cluster.js"></script>
+    <script type="module">
+        import { navigation } from "./sidebarlogic.js";
+        navigation();
+    </script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="navbar.css">
+</head>
+  <div class="main">
+    <h2 class="text">Дерево решений</h2>
+  </div>
+  <div class="float-container">
+    <div class="float-child1">
+      <div class="tree">
+        <ul id="root">
+        </ul>
+      </div>
+    </div>
+
+    <div class="float-child2">
+      <div class="forbutton">
+        <button class="butt" id = "BuildTree">Построить дерево</button>
+        <button class="butt" id = "DetourButton">Показать решение</button>
+        <button class="butt" id = "ClearTree">Очистить</button>
+        <p class="forlabel">Выбрать файл:</p>
+        <p> <input type="file" id='upload' name="upload" accept=".csv, .txt">
+        <p> <label class="forlabel" for="upload">Ввести вручную:</label>
+        <p> <input type="text" id="textdata">
+      </div>
+    </div>
+
+  </div>
+  <script src="decision_tree_alg.js"></script>
+  <script src="parser.js"></script>
+<script type="module">
+  import { navigation } from "./sidebarlogic.js";
+  navigation();
+</script>
+</body>
+
+</html>
