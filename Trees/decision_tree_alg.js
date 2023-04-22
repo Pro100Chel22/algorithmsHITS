@@ -1,4 +1,4 @@
-var Dataset = [
+let Dataset = [
     ["usd", "lamphat", "nctt", "slkt", "play "],
     ["TANG", "GIAM", "THAP", "TB", "THAP "],
     ["TANG", "TANG", "THAP", "TB", "CAO "],
@@ -92,7 +92,7 @@ function countUniqueValues(group, Branch) {
     }
     let pos = 1;
     let neg = 1;
-    for (var i = 0; i < dataset.length; i++) {
+    for (let i = 0; i < dataset.length; i++) {
         if (dataset[i][dataset[0].length - 1] === posstr) {
             attr[0].positive = pos++;
         }
