@@ -1,6 +1,6 @@
 
 
-var
+let
   canvas = document.getElementById("canvasCluster"),
   ctx = canvas.getContext("2d"),
   coordsPoint = [],
@@ -87,7 +87,7 @@ function pushPointListener(e) {
   let x = Math.floor(e.offsetX * scaleX);
   let y = Math.floor(e.offsetY * scaleY);
 
-  var Point = {
+  let Point = {
     x: x,
     y: y
   };
@@ -203,13 +203,13 @@ function findMinStroke(flagCompare){
     coordsClusterKMeans[i].neigbourPoints = [];
   
   for (let i = 0; i < coordsPoint.length; i++) {
-    var minPoint = {
+    let minPoint = {
       x: 0,
       y: 0,
       index: 0,
       color: "black"
     };
-    var minLen = 999999;
+    let minLen = 999999;
     for (let j = 0; j < coordsClusterKMeans.length; j++) 
       if (minLen > findLenBeetwenPoints(coordsPoint[i], coordsClusterKMeans[j])) {
         minLen = findLenBeetwenPoints(coordsPoint[i], coordsClusterKMeans[j]);
@@ -238,7 +238,7 @@ function findMinStroke(flagCompare){
 }
 function replaceCentroids(flag){
   for (let i = 0; i < coordsClusterKMeans.length; i++) {
-    var sumX = 0, sumY = 0;
+    let sumX = 0, sumY = 0;
     for (let j = 0; j < coordsClusterKMeans[i].neigbourPoints.length; j++) {
       sumX += coordsClusterKMeans[i].neigbourPoints[j].x;
       sumY += coordsClusterKMeans[i].neigbourPoints[j].y;
@@ -261,8 +261,8 @@ function updateClusters() {
         minCluster1 = i, minCluster2 = j;
         minLen = findLenBeetwenPoints(coordsClusterHier[i], coordsClusterHier[j]);
       }      
-  mergeCluster(minCluster1, minCluster2);       
-  temp = [];
+  mergeCluster(minCluster1, minCluster2);
+  let temp = [];
   for (let i = 0; i < coordsClusterHier.length; i++) 
     if(coordsClusterHier[i] != 0) temp.push(coordsClusterHier[i]);
   coordsClusterHier = temp;
@@ -271,7 +271,7 @@ function mergeCluster(i, j) {
   for (let k = 0; k < coordsClusterHier[j].neigbourPoints.length; k++) 
     coordsClusterHier[i].neigbourPoints.push(coordsClusterHier[j].neigbourPoints[k])
   coordsClusterHier[j] = 0;
-  var sumX = 0, sumY = 0;
+  let sumX = 0, sumY = 0;
   for (let k = 0; k < coordsClusterHier[i].neigbourPoints.length; k++) {
     sumX += coordsPoint[coordsClusterHier[i].neigbourPoints[k]].x;
     sumY += coordsPoint[coordsClusterHier[i].neigbourPoints[k]].y;
@@ -310,14 +310,14 @@ async function ostovClusterizations(){
   drawOstov();
 }  
 function findOstov() {
-  var Graph = [];
+  let Graph = [];
   for (let i = 0; i < coordsPoint.length; i++) Graph[i] = [];
 
   for (let i = 0; i < coordsPoint.length; i++) 
     for (let j = 0; j < coordsPoint.length; j++)
       Graph[i][j] = findLenBeetwenPoints(coordsPoint[i], coordsPoint[j]);
   let numVer = coordsPoint.length, minDistance = 0;
-  var Ostov = [];
+  let Ostov = [];
   for (let i = 0; i < numVer; i++) 
       Ostov[i] = [];
   for (let i = 0; i < numVer; i++)
@@ -401,7 +401,7 @@ async function compareClusterizations() {
   Ostov = findOstov();
   deleteMaxStroke();
   for (let i = 0; i < coordsPoint.length; i++){
-    Point = {
+    let Point = {
       x: coordsPoint[i].x,
       y: coordsPoint[i].y,
       index: i,
